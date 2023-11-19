@@ -7,7 +7,7 @@ app.component('product-display', {
   },
   template: 
   /*html*/
-  `<div class="product-display" @add-to-cart="updateCart">
+  `<div class="product-display">
     <div class="product-container">
       <div class="product-image">
         <img 
@@ -20,8 +20,8 @@ app.component('product-display', {
 
         <p v-if="onSale">{{ this.brand + ' ' + this.product + ' is on sale' }}</p>
 
-        <p v-if="quantity > 10">In stock</p>
-        <p v-else-if="quantity <= 10 && quantity > 0">Almost sold out</p>
+        <p v-if="inStock > 10">In stock</p>
+        <p v-else-if="inStock <= 10 && inStock > 0">Almost sold out</p>
         <p v-else>Out of stock</p>
 
         <p>Shipping: {{shipping}}</p>
