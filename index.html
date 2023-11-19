@@ -13,12 +13,6 @@
 
       <div class="cart">Cart ({{ cart.length }})</div>
 
-      <product-display 
-        :premium="premium"
-        @add-to-cart="updateCart"
-        @remove-from-cart="removeFromCart"
-      ></product-display>
-
       <!-- 
         1) in ProductDisplay: add a click event to the button
         2) in ProductDisplay: make a method that goes into that click event ( addToCart )
@@ -26,7 +20,12 @@
         4) in index.html: add the method as an event listener to the component product-display ( @add-to-cart="" )
         5) in index.html: in the event listener add a method that updates the cart ( updateCart )
         6) in main.js: define updateCart to increment up by 1 ( this.cart += 1 )
-       -->
+      -->
+      <product-display 
+        :premium="premium"
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeFromCart"
+      ></product-display>
 
     </div>
 
@@ -35,6 +34,8 @@
 
     <!-- Import components -->
     <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
     
     <script>
       const mountedApp = app.mount('#app');
